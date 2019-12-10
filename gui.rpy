@@ -11,8 +11,6 @@ init offset = -2
 init python:
     gui.init(1920, 1080)
 
-
-
 ################################################################################
 ## Конфигурируемые Переменные GUI
 ################################################################################
@@ -157,7 +155,7 @@ define gui.button_borders = Borders(6, 6, 6, 6)
 
 ## Если True, фон изображения будет моститься. Если False, фон изображения будет
 ## линейно масштабирован.
-define gui.button_tile = False
+define gui.button_tile = True
 
 ## Шрифт, используемый кнопкой.
 define gui.button_text_font = gui.interface_text_font
@@ -474,6 +472,3 @@ init python:
 
         gui.nvl_button_width = 1860
         gui.nvl_button_xpos = 30
-
-
-

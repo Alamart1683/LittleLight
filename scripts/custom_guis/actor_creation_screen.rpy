@@ -15,7 +15,7 @@ screen actor_creation_screen:
         xalign 0.0
         yalign 0.0
         xysize(1920, 1080)
-        background("images/bg/actor_creation_frame.png")
+        background("images/bg/black.png")
 
         # Рамка воруг имени
         add "gui/borders/border1.png":
