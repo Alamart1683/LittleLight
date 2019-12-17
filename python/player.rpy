@@ -1,7 +1,7 @@
 init python:
     class Player:
         def __init__(self, img, sex, name, col, abils, money):
-            # Базовые поля
+            # Характеристики персонажа
             self.body = img
             self.male = sex
             self.name = name

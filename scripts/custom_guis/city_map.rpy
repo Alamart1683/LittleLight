@@ -1,6 +1,12 @@
 # Карта города
 label city_map:
+    $ hero = Character(actor.name, color = "#191970")
+    # $ money = "{color=#FFFF00}Деньги: " + str(actor.money) + "$"
+    # $ MoneyPos = Position(ypos = 30, xpos = 1780)
     scene bg black
+    call hood
+    # show hood at top
+    # show text money at MoneyPos
     window hide # Спрячем диалоговое окно
     # Создаем активные области
     $ result = renpy.imagemap (
@@ -15,11 +21,12 @@ label city_map:
             (243, 406, 378, 494, "police")
         ]
     )
+
     # Обрабатываем выбор:
 
     # Переход в отель в первый раз
     if result == "hotel":
-        call f_hotel
+        call first_hotel_visit
     # Переход в собор в первый раз
     elif result == "church":
         call f_church
@@ -39,42 +46,33 @@ label city_map:
     elif result == "police":
         call f_police
 
-    label f_hotel:
-        if actor.sex == "male":
-            actor.name "Наконец-то я отыскал то, что нужно!"
-        else:
-            actor.name "Наконец-то я отыскала то, что нужно!"
     label f_church:
         scene bg cathedral
-        actor.name "Городской собор. Сейчас мне здесь нечего делать."
+        hero "Городской собор. Сейчас мне здесь нечего делать."
         call city_map
 
     label f_school:
-        actor.name "Школа. Сейчас мне здесь нечего делать."
+        hero "Школа. Сейчас мне здесь нечего делать."
         call city_map
 
     label f_station:
-        actor.name "Старый вокзал. Кажется я начинаю ходить кругами."
+        scene bg zhd_station
+        hero "Старый вокзал. Кажется я начинаю ходить кругами."
         call city_map
 
     label f_hospital:
         scene bg hospital
-        actor.name "Местный госпиталь. Сейчас мне здесь нечего делать."
+        hero "Местный госпиталь. Сейчас мне здесь нечего делать."
         call city_map
 
     label f_guildhall:
         scene bg guildhall
-        actor.name "Старинная ратуша, центр города. Сейчас мне здесь нечего делать."
+        hero "Старинная ратуша, центр города. Сейчас мне здесь нечего делать."
         call city_map
 
     label f_police:
         scene bg police_office
-        actor.name "Полицейский участок. Сейчас мне здесь нечего делать."
+        hero "Полицейский участок. Сейчас мне здесь нечего делать."
         call city_map
 
-
-
-
-
-    scene bg black # Показать черный фон
     return

@@ -1,8 +1,9 @@
-# Определение всех сущностей игры. $ для меня
+# Определение всех сущностей игры.
 init:
     # Объект игрока
     python:
-        _actor = Player(img = "", sex = "", name = "Игрок", col = "#000000", abils = [], money = 1000)
+        _actor = Player(img = "", sex = "", name = "Игрок",
+        col = "#000000", abils = [], money = 1000)
 
     $ ontos = Character(u"...")
 
@@ -19,6 +20,8 @@ init:
     image bg cathedral = "bg/cathedral.png" # Собор
     image bg hospital = "bg/hospital.png" # Госпиталь
     image bg guildhall = "bg/guildhall.png" # Ратуша
+    image bg hotel_reception = "bg/reception.png" # Ресепшен отеля
+    image bg hotel_room = "bg/hotel_room.png" # Комната в отеле
 
     # Создание объектов картинок спрайтов
     image girl = "cg/Girl_Full.png"
@@ -26,11 +29,15 @@ init:
     image boy = "cg/Boy_Full.png"
     image h_boy = "cg/Boy_Half.png"
     image ren = "cg/renpy.png"
+    image reception_girl = "cg/Receptiongirl.png"
+
+    # Картинка худа
+    image hood = "gui/borders/hood.png"
 
 # Игра начинается здесь:
 label start:
-    #play sound "sound/freedom.mp3" fadein(2.0)
     $ actor = _actor # объект гг
+    # play sound "sound/freedom.mp3" fadein(2.0)
     # call introduction # Вызов вступления
     call gender_choose # Вызов меню выбора пола гг
     call screen actor_creation_screen # Вызов меню создания персонажа

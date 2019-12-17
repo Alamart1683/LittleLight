@@ -21,7 +21,7 @@ init python:
 ## Цвета текста в интерфейсе.
 
 ## Акцентный цвет используется в заголовках и подчёркнутых текстах.
-define gui.accent_color = '#003366'
+define gui.accent_color = '#FFFFFF'#'#003366'
 
 ## Цвет, используемый в текстовой кнопке, когда она не выбрана и не наведена.
 define gui.idle_color = '#aaaaaa'
@@ -47,8 +47,8 @@ define gui.muted_color = '#6684a3'
 define gui.hover_muted_color = '#99adc1'
 
 ## Цвета, используемые в тексте диалогов и выборов.
-define gui.text_color = '#404040'
-define gui.interface_text_color = '#404040'
+define gui.text_color = '#191970'
+define gui.interface_text_color = '#191970'
 
 
 ## Шрифты и их размеры #########################################################
