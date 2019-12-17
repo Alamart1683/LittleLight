@@ -70,8 +70,10 @@ label station_in:
     window hide
     scene bg zhd_station
     if actor.sex == "male":
+        actor.name "Высокий потолок вокзала давил на меня."
         actor.name "Я покинул вокзал и отправился исследовать город."
     else:
+        actor.name "Высокий потолок вокзала давил на меня."
         actor.name "Я покинула вокзал и отправилась исследовать город."
     stop music
     call city_map

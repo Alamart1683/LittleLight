@@ -40,30 +40,36 @@ label city_map:
         call f_police
 
     label f_hotel:
-        actor.name "Наконец-то я отыскал то, что нужно!"
-
+        if actor.sex == "male":
+            actor.name "Наконец-то я отыскал то, что нужно!"
+        else:
+            actor.name "Наконец-то я отыскала то, что нужно!"
     label f_church:
+        scene bg cathedral
         actor.name "Городской собор. Сейчас мне здесь нечего делать."
         call city_map
 
     label f_school:
-        actor.name "Школа. Сейчас мне здесь нечего делать"
+        actor.name "Школа. Сейчас мне здесь нечего делать."
         call city_map
 
     label f_station:
-        actor.name "Вокзал. Кажется я начинаю ходить кругами"
+        actor.name "Старый вокзал. Кажется я начинаю ходить кругами."
         call city_map
 
     label f_hospital:
-        actor.name "Местный госпиталь. Сейчас мне здесь нечего делать"
+        scene bg hospital
+        actor.name "Местный госпиталь. Сейчас мне здесь нечего делать."
         call city_map
 
     label f_guildhall:
-        actor.name "Старинная ратуша, центр города. Сейчас мне здесь нечего делать"
+        scene bg guildhall
+        actor.name "Старинная ратуша, центр города. Сейчас мне здесь нечего делать."
         call city_map
 
     label f_police:
-        actor.name "Полицейский участок. Сейчас мне здесь нечего делать"
+        scene bg police_office
+        actor.name "Полицейский участок. Сейчас мне здесь нечего делать."
         call city_map
 
 

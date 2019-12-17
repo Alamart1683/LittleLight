@@ -2,7 +2,7 @@
 init:
     # Объект игрока
     python:
-        _actor = Player(img = "", sex = "", name = "", col = "#000000", abils = [])
+        _actor = Player(img = "", sex = "", name = "Игрок", col = "#000000", abils = [], money = 1000)
 
     $ ontos = Character(u"...")
 
@@ -14,7 +14,11 @@ init:
     image bg train = "bg/train_intro.png" # Интро поезд
     image bg station = "bg/station.png" # Интро вокзал
     image bg aframe = "bg/actor_creation_frame.png"
-    image bg zhd_station = "bg/zhd_station.png"
+    image bg zhd_station = "bg/zhd_station.png" # Железнодорожная станция
+    image bg police_office = "bg/police_office.png" # Полицейский участок
+    image bg cathedral = "bg/cathedral.png" # Собор
+    image bg hospital = "bg/hospital.png" # Госпиталь
+    image bg guildhall = "bg/guildhall.png" # Ратуша
 
     # Создание объектов картинок спрайтов
     image girl = "cg/Girl_Full.png"
