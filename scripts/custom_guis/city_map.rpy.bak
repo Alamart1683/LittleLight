@@ -4,7 +4,7 @@ label city_map:
     # $ money = "{color=#FFFF00}Деньги: " + str(actor.money) + "$"
     # $ MoneyPos = Position(ypos = 30, xpos = 1780)
     scene bg black
-    call hood from _call_hood_3
+    call hood
     # show hood at top
     # show text money at MoneyPos
     window hide # Спрячем диалоговое окно
@@ -26,49 +26,49 @@ label city_map:
 
     # Переход в отель в первый раз
     if result == "hotel":
-        call first_hotel_visit from _call_first_hotel_visit
+        call first_hotel_visit
     # Переход в собор в первый раз
     elif result == "church":
-        call f_church from _call_f_church
+        call f_church
     # Переход в школу в первый раз
     elif result == "school":
-        call f_school from _call_f_school
+        call f_school
     # Переход на вокзал в первый раз
     elif result == "station":
-        call f_station from _call_f_station
+        call f_station
     # Переход в больницу в первый раз
     elif result == "hospital":
-        call f_hospital from _call_f_hospital
+        call f_hospital
     # Переход в ратушу в первый раз
     elif result == "guildhall":
-        call f_guildhall from _call_f_guildhall
+        call f_guildhall
     # Переход в отделение полиции в первый раз
     elif result == "police":
-        call police from _call_police
+        call police
 
     label f_church:
         scene bg cathedral
         hero "Городской собор. Сейчас мне здесь нечего делать."
-        call city_map from _call_city_map_1
+        call city_map
 
     label f_school:
         scene bg school_coridor
         hero "Школа. Сейчас мне здесь нечего делать."
-        call city_map from _call_city_map_2
+        call city_map
 
     label f_station:
         scene bg zhd_station
         hero "Старый вокзал. Кажется я начинаю ходить кругами."
-        call city_map from _call_city_map_3
+        call city_map
 
     label f_hospital:
         scene bg hospital
         hero "Местный госпиталь. Сейчас мне здесь нечего делать."
-        call city_map from _call_city_map_4
+        call city_map
 
     label f_guildhall:
         scene bg guildhall
         hero "Старинная ратуша, центр города. Сейчас мне здесь нечего делать."
-        call city_map from _call_city_map_5
+        call city_map
 
     return

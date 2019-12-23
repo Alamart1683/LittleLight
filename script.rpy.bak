@@ -42,7 +42,7 @@ label start:
     $ actor = _actor # объект гг
     # play sound "sound/freedom.mp3" fadein(2.0)
     # call introduction # Вызов вступления
-    call gender_choose from _call_gender_choose # Вызов меню выбора пола гг
+    call gender_choose # Вызов меню выбора пола гг
     call screen actor_creation_screen # Вызов меню создания персонажа
     play sound "sound/train.mp3" # Звук поезда
     return

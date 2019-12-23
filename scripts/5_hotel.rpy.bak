@@ -1,7 +1,7 @@
 # Первое посещение отеля
 label first_hotel_visit:
     scene bg hotel_reception
-    call hood from _call_hood
+    call hood
     $ hero = Character(actor.name, color = "#191970")
     $ reception_girl = Character("Мэри Сью", color = "#800080")
     $ girl_pos = Position(ypos = 1080, xpos = 1600)
@@ -44,18 +44,18 @@ label first_hotel_visit:
 
     $ actor.money = 1000 - 50
 
-    call hood from _call_hood_1
+    call hood
 
     reception_girl "Отлично! Я провожу вас в ваш номер."
     reception_girl "А, и ещё. Закрывайте шторы по ночам."
 
-    call home from _call_home
+    call home
     return
 
 # Лейбл моего номера в отеле
 label home:
     scene bg hotel_room
-    call hood from _call_hood_2
+    call hood
     $ hero = Character(actor.name, color = "#191970")
     hero "На этом пока все!"
-    call start from _call_start
+    call start
