@@ -22,6 +22,8 @@ init:
     image bg guildhall = "bg/guildhall.png" # Ратуша
     image bg hotel_reception = "bg/reception.png" # Ресепшен отеля
     image bg hotel_room = "bg/hotel_room.png" # Комната в отеле
+    image bg school_coridor = "bg/school_coridor.png" # Школьный коридор
+    image bg dark_coridor = "bg/dark_coridor.png" # Темный коридор
 
     # Создание объектов картинок спрайтов
     image girl = "cg/Girl_Full.png"
@@ -30,6 +32,7 @@ init:
     image h_boy = "cg/Boy_Half.png"
     image ren = "cg/renpy.png"
     image reception_girl = "cg/Receptiongirl.png"
+    image policeman = "cg/Policeman.png"
 
     # Картинка худа
     image hood = "gui/borders/hood.png"

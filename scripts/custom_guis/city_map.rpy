@@ -44,7 +44,7 @@ label city_map:
         call f_guildhall
     # Переход в отделение полиции в первый раз
     elif result == "police":
-        call f_police
+        call police
 
     label f_church:
         scene bg cathedral
@@ -52,6 +52,7 @@ label city_map:
         call city_map
 
     label f_school:
+        scene bg school_coridor
         hero "Школа. Сейчас мне здесь нечего делать."
         call city_map
 
@@ -68,11 +69,6 @@ label city_map:
     label f_guildhall:
         scene bg guildhall
         hero "Старинная ратуша, центр города. Сейчас мне здесь нечего делать."
-        call city_map
-
-    label f_police:
-        scene bg police_office
-        hero "Полицейский участок. Сейчас мне здесь нечего делать."
         call city_map
 
     return
