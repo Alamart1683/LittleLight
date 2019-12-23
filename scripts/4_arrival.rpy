@@ -23,6 +23,7 @@ label train_moving:
         call screen train_buttons
     else:
         call screen train_buttons
+    return
 
 #-2-#
 # Сцена показа газеты
@@ -30,6 +31,7 @@ label newspaper:
     # play sound "sound/newspaper.mp3"
     $ flag = True
     call screen newspaper
+    return
 
 #-3-#
 # Сцена торможения поезда
@@ -49,6 +51,7 @@ label train_stopping:
         hero "Я покинула вагон и оказалась на перроне вокзала."
     hide bg black
     call station from _call_station
+    return
 
 #-4-#
 # Сцена появления на воказале
@@ -67,6 +70,7 @@ label station:
     $ flag = False
     hide bg station
     call station_in from _call_station_in
+    return
 
 #-5-#
 # Сцена внутри вокзала
@@ -82,6 +86,7 @@ label station_in:
         hero "Я покинула вокзал и отправилась исследовать город."
     stop music
     call city_map from _call_city_map
+    return
 
 ###################
 # Локальные менюшки

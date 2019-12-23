@@ -18,7 +18,8 @@ label city_map:
             (820, 217, 1260, 308, "station"),
             (1676, 502, 1920, 710, "hospital"),
             (485, 348, 898, 744, "guildhall"),
-            (243, 406, 378, 494, "police")
+            (243, 406, 378, 494, "police"),
+            (1400, 80, 1920, 350, "dark")
         ]
     )
 
@@ -45,6 +46,10 @@ label city_map:
     # Переход в отделение полиции в первый раз
     elif result == "police":
         call police from _call_police
+    # Переход на смерть
+    elif result == "dark":
+        call death
+        return
 
     label f_church:
         scene bg cathedral
