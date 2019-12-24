@@ -46,3 +46,6 @@ label start:
     call screen actor_creation_screen # Вызов меню создания персонажа
     play sound "sound/train.mp3" # Звук поезда
     return
+
+label ex:
+    pass

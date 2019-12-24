@@ -31,7 +31,7 @@ label talk_policeman:
     scene bg police_office
     call hood from _call_hood_5
     $ hero = Character(actor.name, color = "#191970")
-    $ policeman = Character("Шериф Джонсон", color = "#00FFFF")
+    $ policeman = Character("Шериф Джонсон", color = "#800000")
     $ policeman_pos = Position(ypos = 1080, xpos = 1500)
 
     if actor.sex == "male":
@@ -70,3 +70,4 @@ label talk_policeman:
         hero "Простите, пока ничем."
 
     call city_map from _call_city_map_7
+    return

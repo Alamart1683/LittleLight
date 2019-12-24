@@ -48,7 +48,7 @@ label city_map:
         call police from _call_police
     # Переход на смерть
     elif result == "dark":
-        call death
+        call death from _call_death
         return
 
     label f_church:
@@ -75,5 +75,15 @@ label city_map:
         scene bg guildhall
         hero "Старинная ратуша, центр города. Сейчас мне здесь нечего делать."
         call city_map from _call_city_map_5
+
+    label f_hospital_death:
+        scene bg hospital
+        if actor.sex == "male":
+            hero "Я очнулся в госпитале с пробитой головой."
+            hero "Как только меня выписали, я вернулся к своему заданию."
+        else:
+            hero "Я очнулась в госпитале с пробитой головой."
+            hero "Как только меня выписали, я вернулась к своему заданию."
+        call city_map from _call_city_map_8
 
     return

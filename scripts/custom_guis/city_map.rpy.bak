@@ -4,7 +4,7 @@ label city_map:
     # $ money = "{color=#FFFF00}Деньги: " + str(actor.money) + "$"
     # $ MoneyPos = Position(ypos = 30, xpos = 1780)
     scene bg black
-    call hood
+    call hood from _call_hood_3
     # show hood at top
     # show text money at MoneyPos
     window hide # Спрячем диалоговое окно
@@ -18,7 +18,8 @@ label city_map:
             (820, 217, 1260, 308, "station"),
             (1676, 502, 1920, 710, "hospital"),
             (485, 348, 898, 744, "guildhall"),
-            (243, 406, 378, 494, "police")
+            (243, 406, 378, 494, "police"),
+            (1400, 80, 1920, 350, "dark")
         ]
     )
 
@@ -26,49 +27,63 @@ label city_map:
 
     # Переход в отель в первый раз
     if result == "hotel":
-        call first_hotel_visit
+        call first_hotel_visit from _call_first_hotel_visit
     # Переход в собор в первый раз
     elif result == "church":
-        call f_church
+        call f_church from _call_f_church
     # Переход в школу в первый раз
     elif result == "school":
-        call f_school
+        call f_school from _call_f_school
     # Переход на вокзал в первый раз
     elif result == "station":
-        call f_station
+        call f_station from _call_f_station
     # Переход в больницу в первый раз
     elif result == "hospital":
-        call f_hospital
+        call f_hospital from _call_f_hospital
     # Переход в ратушу в первый раз
     elif result == "guildhall":
-        call f_guildhall
+        call f_guildhall from _call_f_guildhall
     # Переход в отделение полиции в первый раз
     elif result == "police":
-        call police
+        call police from _call_police
+    # Переход на смерть
+    elif result == "dark":
+        call death from _call_death
+        return
 
     label f_church:
         scene bg cathedral
         hero "Городской собор. Сейчас мне здесь нечего делать."
-        call city_map
+        call city_map from _call_city_map_1
 
     label f_school:
         scene bg school_coridor
         hero "Школа. Сейчас мне здесь нечего делать."
-        call city_map
+        call city_map from _call_city_map_2
 
     label f_station:
         scene bg zhd_station
         hero "Старый вокзал. Кажется я начинаю ходить кругами."
-        call city_map
+        call city_map from _call_city_map_3
 
     label f_hospital:
         scene bg hospital
         hero "Местный госпиталь. Сейчас мне здесь нечего делать."
-        call city_map
+        call city_map from _call_city_map_4
 
     label f_guildhall:
         scene bg guildhall
         hero "Старинная ратуша, центр города. Сейчас мне здесь нечего делать."
+        call city_map from _call_city_map_5
+
+    label f_hospital_death:
+        scene bg hospital
+        if actor.sex == "male":
+            hero "Я очнулся в госпитале с пробитой головой."
+            hero "Как только меня выписали, я вернулся к своему заданию."
+        else:
+            hero "Я очнулась в госпитале с пробитой головой."
+            hero "Как только меня выписали, я вернулась к своему заданию."
         call city_map
 
     return

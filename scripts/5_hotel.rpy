@@ -13,7 +13,6 @@ label first_hotel_visit:
 
     show reception_girl at girl_pos
 
-    hero "Совершив достаточно долгую прогулку по городу, я нашел здание столь желанной гостиницы и вошел внутрь."
     hero "У ресепшена стояла девушка."
     hero "Заметив мою нерешительность, она подошла ко мне."
 
@@ -36,11 +35,11 @@ label first_hotel_visit:
     reception_girl "50$ в сутки и замечательный номер с видом на историческую часть города ваш!"
 
     if actor.sex == "male":
-        hero "Дорого конечно, но у меня все равно нет выбора, подумала я."
-        hero "Хорошо, я согласен - сказал я и отсчитал требуемую сумму."
+        hero "Дорого конечно, но у меня все равно нет выбора."
+        hero "Хорошо, я согласен."
     else:
-        hero "Дорого конечно, но у меня все равно нет выбора, подумала я."
-        hero "Хорошо, я согласна - сказала я и отсчитала требуемую сумму."
+        hero "Дорого конечно, но у меня все равно нет выбора."
+        hero "Хорошо, я согласна."
 
     $ actor.money = 1000 - 50
 
@@ -50,6 +49,8 @@ label first_hotel_visit:
     reception_girl "А, и ещё. Закрывайте шторы по ночам."
 
     call home from _call_home
+    init python:
+        renpy.set_return_stack([])
     return
 
 # Лейбл моего номера в отеле
@@ -57,5 +58,7 @@ label home:
     scene bg hotel_room
     call hood from _call_hood_2
     $ hero = Character(actor.name, color = "#191970")
-    hero "На этом пока все!"
-    call start from _call_start
+    hero "Эти серые стены угнетают меня."
+    "{space=425}К{space=3}О{space=3}Н{space=2}Е{space=1}Ц И{space=2}Г{space=2}Р{space=2}Ы"
+    call train_moving from _call_train_moving
+    return
